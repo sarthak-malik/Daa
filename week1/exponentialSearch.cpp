@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int linearSearch(vector<int> a, int b, int e, int k)
+int linearSearch(int a[], int b, int e, int k)
 {
     int no_of_comparison = 0;
     for (int i = b; i <= e; ++i)
@@ -18,9 +18,8 @@ int linearSearch(vector<int> a, int b, int e, int k)
     return 0;
 }
 
-int exponentialSearch(vector<int> a, int key)
+int exponentialSearch(int a[], int n, int key)
 {
-    int n = a.size();
     if (a[0] == key)
     {
         cout << "Present 1" << endl;
@@ -34,18 +33,22 @@ int exponentialSearch(vector<int> a, int key)
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     int n;
     cin >> n;
     for (int z = 0; z < n; ++z)
     {
         int l;
         cin >> l;
-        vector<int> a(l);
+        int a[l];
         for (int i = 0; i < l; ++i)
             cin >> a[i];
         int key;
         cin >> key;
-        exponentialSearch(a, key);
+        exponentialSearch(a, n, key);
     }
     return 0;
 }
