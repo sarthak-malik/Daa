@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int binarySearch(vector<int> a, int l, int k)
+int binarySearch(int a[], int l, int k)
 {
     int b = 0, e = l - 1, no_of_comparison = 0;
     while (b <= e)
@@ -25,13 +25,17 @@ int binarySearch(vector<int> a, int l, int k)
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     int n;
     cin >> n;
     for (int z = 0; z < n; ++z)
     {
         int l;
         cin >> l;
-        vector<int> a(l);
+        int a[l];
         for (int i = 0; i < l; ++i)
             cin >> a[i];
         int key;
